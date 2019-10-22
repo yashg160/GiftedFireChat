@@ -30,6 +30,7 @@ or
 3. Then follow the instructions for **Android** only setup [here](https://rnfirebase.io/docs/v5.x.x/installation/android). 
 4. After you have completed the initial installation, add the realtime database module to your project. Follow the instructions [here](https://rnfirebase.io/docs/v5.x.x/database/android).
 5. Then run the command `yarn add react-native-gifted-fire-chat` or `npm install --save react-native-gifted-fire-chat`.
+6. Run your project by entering `react-native run-android`
 
 After completing the installation, you are ready to use this package.
 
@@ -52,10 +53,10 @@ After completing the installation, you are ready to use this package.
 	
 
 - **Optional Props**
-	- **renderLoading**(*Component*): An ActivityIndicator or any other React Component to display during loading. Default is <ActivityIndicator> from react-native.
 	- **userId**(*String*): A custom id passed to denote the sender's identity. Make sure that it is unique for each user. Default is the sender's phone number passed in senderPhoneNumber prop.
 	- All other react-native-gifted-chat props. View documentation [here](https://www.npmjs.com/package/react-native-gifted-chat). Quick replies and system messages are not yet supported. 
-	- **userAvatar** *(string)* and **userName** *(string)* can also be supplied as props. Default value for avatar is null and name is 'User Name'
+	- **userAvatar** *(String)*: A url for the user image. It can be a local or a network image
+	- **userName** *(String)*: Name of the user to enter into the message object
 	- **messages** (*Array*): A custom array of messages can be passed in as prop to display initially before any messages are sent. Each message object should contain a text property, user object(for custom properties) and a time of creation.
 
 ## Tips
@@ -63,7 +64,7 @@ After completing the installation, you are ready to use this package.
 2. To insert a header into your view, it is recommended to use `Header` from `react-native-elements`. View the [documentation](https://react-native-elements.github.io/react-native-elements/docs/header.html).
 3. Use a navigation library such as `react-navigation` or `react-native-router-flux` to move from one screen to another. You can also user the header provided by these libraries if you wish so. View [react-navigation](https://reactnavigation.org/docs/en/getting-started.html). View [react-native-router-flux](https://www.npmjs.com/package/react-native-router-flux).
 4. Provide the senderAvatar prop a download URL for the image. URL can be for a local or network image.
-5. Use `@react-native-community/netinfo1` to check for internet connectivity. View [here](https://www.npmjs.com/package/@react-native-community/netinfo).
+5. Use `@react-native-community/netinfo` to check for internet connectivity. View [here](https://www.npmjs.com/package/@react-native-community/netinfo).
 
 ## Limitations
 This package is simply an abstraction over two existing modules.

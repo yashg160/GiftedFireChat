@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ActivityIndicator } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
 import { GiftedChat } from 'react-native-gifted-chat';
 import firebase from 'react-native-firebase';
 
@@ -8,7 +8,7 @@ export default class GiftedFireChat extends Component {
     constructor() {
         super();
         this.state = {
-            messages: this.props.messages == null ? [] : this.props.messages,
+            messages: this.props.messages === null ? [] : this.props.messages,
             loading: true,
             uniRef: null
         }
@@ -91,7 +91,7 @@ export default class GiftedFireChat extends Component {
 
     render() {
         if (this.state.loading) {
-            this.props.renderLoading == null ? <ActivityIndicator /> : this.props.renderLoading
+            this.props.renderLoading === null ? <ActivityIndicator /> : this.props.renderLoading
         }
 
         return (
@@ -102,9 +102,9 @@ export default class GiftedFireChat extends Component {
                     messages={this.state.messages}   //messages can be passed as prop
                     onSend={message => this.sendMessage(message)}   //Options for overriding
                     user={{
-                        _id: this.props.userId == null ? this.props.senderPhoneNumber : this.props.userId,
-                        name: this.props.userName == null ? 'User Name' : this.props.userName,
-                        avatar: this.props.userAvatar == null ? null : this.props.userAvatar
+                        _id: this.props.userId === null ? this.props.senderPhoneNumber : this.props.userId,
+                        name: this.props.userName === null ? 'User Name' : this.props.userName,
+                        avatar: this.props.userAvatar === null ? null : this.props.userAvatar
                     }}
                     text={this.props.text}
                     placeholder={this.props.placeholder}
