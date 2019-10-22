@@ -14,6 +14,8 @@ The idea behind this package was to simplify the process of integrating a chat c
 -  **react-native-firebase** to provide firebase connectivity
 
 ## IMPORTANT NOTES
+- **Use version >= 1.2.4. Previous version contain several bugs and will not behave correctly**
+
 - **This module was tested with react-native@0.59.9 and react-native-firebase@5.5.6. Using react-native-firebase >= 6.0.0 or react-native >= 0.60.0 might introduce breaking changes to your project.**
  
 - **This module supports only Android right now. It has not been  tested on iOS. Using this module on iOS may result in unexpected behaviour.**
