@@ -14,8 +14,6 @@
     "UI"
   ],
   "dependencies": {
-    "react": "16.8.x",
-    "react-native": ">=0.60.0",
     "@react-native-firebase/app": ">=6.0.3",
     "@react-native-firebase/database": ">=6.0.3",
     "react-native-gifted-chat": "^0.11.3"
