@@ -1,6 +1,6 @@
 {
   "name": "react-native-gifted-fire-chat",
-  "version": "2.0.0-beta.1",
+  "version": "2.0.0-beta.2",
   "description": "A fully customizable chat component for React Native",
   "main": "index.js",
   "scripts": {
