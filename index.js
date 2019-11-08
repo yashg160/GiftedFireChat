@@ -63,7 +63,7 @@ export default class GiftedFireChat extends Component {
             this.messagesRef.push({
                 text: message[i].text,
                 user: message[i].user,
-                createdAt: firebase.database.getServerTime()
+                createdAt: firebase.database.ServerValue.TIMESTAMP
             });
         }
     }
