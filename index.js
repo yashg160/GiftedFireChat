@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { View, ActivityIndicator } from 'react-native';
 import { GiftedChat } from 'react-native-gifted-chat';
-import firebase from 'react-native-firebase';
+import database, {firebase} from '@react-native-firebase/database';
 
 export default class GiftedFireChat extends Component {
 
     constructor() {
         super();
         this.state = {
-            messages: this.props.messages === null ? [] : this.props.messages,
+            messages: [],
             loading: true,
             uniRef: null
         }
@@ -20,7 +20,7 @@ export default class GiftedFireChat extends Component {
     async setRef() {
 
         let userNumber = this.props.senderPhoneNumber
-        let personNumber = this.props.recieverPhoneNumber;
+        let personNumber = this.props.receiverPhoneNumber;
 
         let slicePerson = personNumber.slice(3, 8);
         let sliceUser = userNumber.slice(3, 8);
@@ -37,7 +37,7 @@ export default class GiftedFireChat extends Component {
 
     async loadMessages(callback) {
         const { uniRef } = this.state;
-        this.messagesRef = firebase.database().ref(`messages-${uniRef}`);
+        this.messagesRef = database().ref(`messages-${uniRef}`);
         this.messagesRef.off();
 
         const onReceive = (data) => {
@@ -63,7 +63,7 @@ export default class GiftedFireChat extends Component {
             this.messagesRef.push({
                 text: message[i].text,
                 user: message[i].user,
-                createdAt: firebase.database().getServerTime()
+                createdAt: firebase.database.getServerTime()
             });
         }
     }
