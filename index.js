@@ -176,7 +176,7 @@ export default class GiftedFireChat extends Component {
 
     componentWillUnmount() {
         this.closeChat()
-            .then(() => console.log(this.TAG, 'Chat closed'))
+            .then(() => console.log(this.TAG, 'Chat Closed on Unmount'))
             .catch(error => console.log(this.TAG, error));
     }
 }
